@@ -6,17 +6,16 @@
     <meta name="description" content="PixelVault: tu biblioteca personal de videojuegos, siempre lista para jugar.">
     <title>PixelVault | Mi biblioteca</title>
 
-    <!-- Bootstrap 5.3.8 CSS (CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4/0/1fJk8y1l3Qx9z7x0f3Y5r5Y5b5Y5b5Y5b5Y5b5Y5b5Y5b5Y5b5Y5b5Y5" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
+    <!-- Bootstrap 5.3.9 CSS desde CDN oficial -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-      :root { --pv-accent: #8b5cf6; --pv-surface: #171923; }
-      body { background: radial-gradient(ellipse at 75% -15%, #33245c 0, #171923 45rem); min-height: 100vh; }
+      :root { --pv-accent: #a78bfa; --pv-surface: #171923; }
+      body { min-height: 100vh; background: radial-gradient(ellipse at 75% -15%, #33245c 0, #171923 45rem); }
       .brand-mark { color: var(--pv-accent); }
       .hero-panel { background: linear-gradient(115deg, rgba(139,92,246,.23), rgba(23,25,35,.95) 58%), var(--pv-surface); }
       .game-cover { aspect-ratio: 16 / 9; object-fit: cover; }
-      .cover-fallback { aspect-ratio: 16 / 9; background: linear-gradient(135deg,#402c75,#171923 75%); }
       .stat-card, .game-card { background-color: rgba(23,25,35,.88); }
       .progress { height: .45rem; }
       .table > :not(caption) > * > * { padding-top: 1rem; padding-bottom: 1rem; }
@@ -46,99 +45,101 @@
     </nav>
     <!-- Fin de navegación -->
 
-    <main class="container py-4 py-lg-5" id="inicio">
-      <!-- Encabezado y resumen -->
-      <header class="hero-panel rounded-4 border border-secondary-subtle p-4 p-md-5 mb-4">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-8">
-            <p class="text-purple text-uppercase fw-semibold small mb-2"><i class="bi bi-stars me-2"></i>Tu espacio de juego</p>
-            <h1 class="display-5 fw-bold mb-3">Tu próxima aventura<br class="d-none d-md-block"> empieza aquí.</h1>
-            <p class="text-body-secondary mb-4">Toda tu colección en un solo lugar. Elige un juego y continúa donde lo dejaste.</p>
-            <a class="btn btn-primary px-4" href="#biblioteca"><i class="bi bi-collection-play me-2"></i>Explorar biblioteca</a>
-          </div>
-          <div class="col-lg-4">
-            <div class="row g-3 text-center">
-              <div class="col-6"><div class="stat-card rounded-3 border border-secondary-subtle p-3 h-100"><i class="bi bi-controller text-warning fs-4"></i><div class="fs-3 fw-bold mt-1">12</div><div class="small text-body-secondary">Juegos</div></div></div>
-              <div class="col-6"><div class="stat-card rounded-3 border border-secondary-subtle p-3 h-100"><i class="bi bi-clock-history text-primary fs-4"></i><div class="fs-3 fw-bold mt-1">248</div><div class="small text-body-secondary">Horas jugadas</div></div></div>
+    <main id="inicio">
+      <!-- Contenedor principal -->
+      <div class="container py-4 py-lg-5">
+        <!-- Encabezado y resumen -->
+        <header class="hero-panel rounded-4 border border-secondary-subtle p-4 p-md-5 mb-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <p class="text-purple text-uppercase fw-semibold small mb-2"><i class="bi bi-stars me-2"></i>Tu espacio de juego</p>
+              <h1 class="display-5 fw-bold mb-3">Tu próxima aventura<br class="d-none d-md-block"> empieza aquí.</h1>
+              <p class="text-body-secondary mb-4">Toda tu colección en un solo lugar. Elige un juego y continúa donde lo dejaste.</p>
+              <a class="btn btn-primary px-4" href="#biblioteca"><i class="bi bi-collection-play me-2"></i>Explorar biblioteca</a>
+            </div>
+            <div class="col-lg-4">
+              <div class="row g-3 text-center">
+                <div class="col-6"><div class="stat-card rounded-3 border border-secondary-subtle p-3 h-100"><i class="bi bi-controller text-warning fs-4"></i><div class="fs-3 fw-bold mt-1">12</div><div class="small text-body-secondary">Juegos</div></div></div>
+                <div class="col-6"><div class="stat-card rounded-3 border border-secondary-subtle p-3 h-100"><i class="bi bi-clock-history text-primary fs-4"></i><div class="fs-3 fw-bold mt-1">248</div><div class="small text-body-secondary">Horas jugadas</div></div></div>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
-      <!-- Fin de encabezado y resumen -->
+        </header>
+        <!-- Fin de encabezado y resumen -->
 
-      <!-- Juegos destacados -->
-      <section class="mb-5" id="favoritos">
-        <div class="d-flex justify-content-between align-items-end mb-3">
-          <div><p class="text-warning small fw-semibold text-uppercase mb-1">A un clic de distancia</p><h2 class="h3 mb-0">Continuar jugando</h2></div>
-          <a class="link-primary text-decoration-none small" href="#biblioteca">Ver biblioteca <i class="bi bi-arrow-right"></i></a>
-        </div>
-        <div class="row g-3">
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="game-card rounded-4 border border-secondary-subtle overflow-hidden h-100">
-              <img class="game-cover w-100" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80" alt="Setup de videojuego con luces de colores">
-              <div class="p-3"><div class="d-flex justify-content-between align-items-start"><div><h3 class="h5 mb-1">Cyber Odyssey</h3><span class="small text-body-secondary">RPG de acción</span></div><span class="badge text-bg-success">En progreso</span></div>
-                <div class="d-flex justify-content-between small mt-3 mb-2"><span class="text-body-secondary">Progreso</span><span>68%</span></div><div class="progress" role="progressbar" aria-label="Progreso en Cyber Odyssey" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-primary" style="width:68%"></div></div>
-                <button class="btn btn-outline-light btn-sm mt-3"><i class="bi bi-play-fill me-1"></i>Continuar</button>
-              </div>
-            </article>
+        <!-- Juegos destacados -->
+        <section class="mb-5" id="favoritos">
+          <div class="d-flex justify-content-between align-items-end mb-3">
+            <div><p class="text-warning small fw-semibold text-uppercase mb-1">A un clic de distancia</p><h2 class="h3 mb-0">Continuar jugando</h2></div>
+            <a class="link-primary text-decoration-none small" href="#biblioteca">Ver biblioteca <i class="bi bi-arrow-right"></i></a>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="game-card rounded-4 border border-secondary-subtle overflow-hidden h-100">
-              <img class="game-cover w-100" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80" alt="Persona jugando videojuegos en una habitación oscura">
-              <div class="p-3"><div class="d-flex justify-content-between align-items-start"><div><h3 class="h5 mb-1">Kingdoms of Ash</h3><span class="small text-body-secondary">Aventura · Fantasía</span></div><span class="badge text-bg-warning">Instalado</span></div>
-                <div class="d-flex justify-content-between small mt-3 mb-2"><span class="text-body-secondary">Progreso</span><span>32%</span></div><div class="progress" role="progressbar" aria-label="Progreso en Kingdoms of Ash" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-warning" style="width:32%"></div></div>
-                <button class="btn btn-outline-light btn-sm mt-3"><i class="bi bi-play-fill me-1"></i>Jugar</button>
-              </div>
-            </article>
+          <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="game-card rounded-4 border border-secondary-subtle overflow-hidden h-100">
+                <img class="game-cover w-100" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Setup de videojuego con luces de colores">
+                <div class="p-3"><div class="d-flex justify-content-between align-items-start"><div><h3 class="h5 mb-1">Cyber Odyssey</h3><span class="small text-body-secondary">RPG de acción</span></div><span class="badge text-bg-success">En progreso</span></div>
+                  <div class="d-flex justify-content-between small mt-3 mb-2"><span class="text-body-secondary">Progreso</span><span>68%</span></div><div class="progress" role="progressbar" aria-label="Progreso en Cyber Odyssey" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-primary" style="width:68%"></div></div>
+                  <button class="btn btn-outline-light btn-sm mt-3"><i class="bi bi-play-fill me-1"></i>Continuar</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="game-card rounded-4 border border-secondary-subtle overflow-hidden h-100">
+                <img class="game-cover w-100" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Persona jugando videojuegos en una habitación oscura">
+                <div class="p-3"><div class="d-flex justify-content-between align-items-start"><div><h3 class="h5 mb-1">Kingdoms of Ash</h3><span class="small text-body-secondary">Aventura · Fantasía</span></div><span class="badge text-bg-warning">Instalado</span></div>
+                  <div class="d-flex justify-content-between small mt-3 mb-2"><span class="text-body-secondary">Progreso</span><span>32%</span></div><div class="progress" role="progressbar" aria-label="Progreso en Kingdoms of Ash" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-warning" style="width:32%"></div></div>
+                  <button class="btn btn-outline-light btn-sm mt-3"><i class="bi bi-play-fill me-1"></i>Jugar</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="game-card rounded-4 border border-secondary-subtle overflow-hidden h-100">
+                <img class="game-cover w-100" src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Control de videojuegos sobre una mesa">
+                <div class="p-3"><div class="d-flex justify-content-between align-items-start"><div><h3 class="h5 mb-1">Neon Drift</h3><span class="small text-body-secondary">Carreras</span></div><span class="badge text-bg-secondary">Sin instalar</span></div>
+                  <div class="d-flex justify-content-between small mt-3 mb-2"><span class="text-body-secondary">Última partida</span><span>Hace 3 días</span></div><div class="progress" role="progressbar" aria-label="Progreso en Neon Drift" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-info" style="width:12%"></div></div>
+                  <button class="btn btn-outline-light btn-sm mt-3"><i class="bi bi-cloud-arrow-down me-1"></i>Instalar</button>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="game-card rounded-4 border border-secondary-subtle overflow-hidden h-100">
-              <img class="game-cover w-100" src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80" alt="Control de videojuegos sobre una mesa">
-              <div class="p-3"><div class="d-flex justify-content-between align-items-start"><div><h3 class="h5 mb-1">Neon Drift</h3><span class="small text-body-secondary">Carreras</span></div><span class="badge text-bg-secondary">Sin instalar</span></div>
-                <div class="d-flex justify-content-between small mt-3 mb-2"><span class="text-body-secondary">Última partida</span><span>Hace 3 días</span></div><div class="progress" role="progressbar" aria-label="Progreso en Neon Drift" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-info" style="width:12%"></div></div>
-                <button class="btn btn-outline-light btn-sm mt-3"><i class="bi bi-cloud-arrow-down me-1"></i>Instalar</button>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!-- Fin de juegos destacados -->
+        </section>
+        <!-- Fin de juegos destacados -->
 
-      <!-- Tabla de biblioteca -->
-      <section class="mb-5" id="biblioteca">
-        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-end gap-3 mb-3">
-          <div><p class="text-primary small fw-semibold text-uppercase mb-1">Tu colección</p><h2 class="h3 mb-0">Biblioteca de juegos</h2></div>
-          <div class="input-group input-group-sm" style="max-width: 20rem"><span class="input-group-text"><i class="bi bi-search"></i></span><input type="search" class="form-control" placeholder="Buscar un juego..." aria-label="Buscar un juego"></div>
-        </div>
-        <div class="table-responsive rounded-3 border border-secondary-subtle">
-          <table class="table table-dark table-hover align-middle mb-0">
-            <thead class="table-active">
-              <tr><th scope="col">#</th><th scope="col">Nombre del juego</th><th scope="col" class="d-none d-md-table-cell">Género</th><th scope="col" class="d-none d-sm-table-cell">Tiempo</th><th scope="col">Estado</th><th scope="col" class="text-end">Acción</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row" class="text-body-secondary">01</th><td><i class="bi bi-lightning-charge-fill text-warning me-2"></i><span class="fw-semibold">Cyber Odyssey</span></td><td class="d-none d-md-table-cell text-body-secondary">RPG de acción</td><td class="d-none d-sm-table-cell">86 h</td><td><span class="badge text-bg-success">Jugando</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Cyber Odyssey"><i class="bi bi-arrow-up-right"></i></button></td></tr>
-              <tr><th scope="row" class="text-body-secondary">02</th><td><i class="bi bi-shield-fill text-purple me-2"></i><span class="fw-semibold">Kingdoms of Ash</span></td><td class="d-none d-md-table-cell text-body-secondary">Aventura</td><td class="d-none d-sm-table-cell">42 h</td><td><span class="badge text-bg-warning">Instalado</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Kingdoms of Ash"><i class="bi bi-arrow-up-right"></i></button></td></tr>
-              <tr><th scope="row" class="text-body-secondary">03</th><td><i class="bi bi-speedometer2 text-info me-2"></i><span class="fw-semibold">Neon Drift</span></td><td class="d-none d-md-table-cell text-body-secondary">Carreras</td><td class="d-none d-sm-table-cell">18 h</td><td><span class="badge text-bg-secondary">En biblioteca</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Neon Drift"><i class="bi bi-arrow-up-right"></i></button></td></tr>
-              <tr><th scope="row" class="text-body-secondary">04</th><td><i class="bi bi-stars text-warning me-2"></i><span class="fw-semibold">Starlight Valley</span></td><td class="d-none d-md-table-cell text-body-secondary">Indie · Simulación</td><td class="d-none d-sm-table-cell">102 h</td><td><span class="badge text-bg-success">Completado</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Starlight Valley"><i class="bi bi-arrow-up-right"></i></button></td></tr>
-              <tr><th scope="row" class="text-body-secondary">05</th><td><i class="bi bi-crosshair text-danger me-2"></i><span class="fw-semibold">Frontline: Zero</span></td><td class="d-none d-md-table-cell text-body-secondary">Estrategia</td><td class="d-none d-sm-table-cell">0 h</td><td><span class="badge text-bg-secondary">Sin instalar</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Frontline: Zero"><i class="bi bi-arrow-up-right"></i></button></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- Fin de la tabla -->
-        <p class="text-body-secondary small mt-2 mb-0">Mostrando 5 de 12 juegos</p>
-      </section>
-      <!-- Fin de tabla de biblioteca -->
+        <!-- Tabla de biblioteca -->
+        <section class="mb-5" id="biblioteca">
+          <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-end gap-3 mb-3">
+            <div><p class="text-primary small fw-semibold text-uppercase mb-1">Tu colección</p><h2 class="h3 mb-0">Biblioteca de juegos</h2></div>
+            <div class="input-group input-group-sm" style="max-width:20rem"><span class="input-group-text"><i class="bi bi-search"></i></span><input id="buscadorJuegos" type="search" class="form-control" placeholder="Buscar un juego..." aria-label="Buscar un juego"></div>
+          </div>
+          <div class="table-responsive rounded-3 border border-secondary-subtle">
+            <table class="table table-dark table-hover align-middle mb-0">
+              <thead class="table-active"><tr><th scope="col">#</th><th scope="col">Nombre del juego</th><th scope="col" class="d-none d-md-table-cell">Género</th><th scope="col" class="d-none d-sm-table-cell">Tiempo</th><th scope="col">Estado</th><th scope="col" class="text-end">Acción</th></tr></thead>
+              <tbody id="filasJuegos">
+                <tr><th scope="row" class="text-body-secondary">01</th><td><i class="bi bi-lightning-charge-fill text-warning me-2"></i><span class="fw-semibold">Cyber Odyssey</span></td><td class="d-none d-md-table-cell text-body-secondary">RPG de acción</td><td class="d-none d-sm-table-cell">86 h</td><td><span class="badge text-bg-success">Jugando</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Cyber Odyssey"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+                <tr><th scope="row" class="text-body-secondary">02</th><td><i class="bi bi-shield-fill text-purple me-2"></i><span class="fw-semibold">Kingdoms of Ash</span></td><td class="d-none d-md-table-cell text-body-secondary">Aventura</td><td class="d-none d-sm-table-cell">42 h</td><td><span class="badge text-bg-warning">Instalado</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Kingdoms of Ash"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+                <tr><th scope="row" class="text-body-secondary">03</th><td><i class="bi bi-speedometer2 text-info me-2"></i><span class="fw-semibold">Neon Drift</span></td><td class="d-none d-md-table-cell text-body-secondary">Carreras</td><td class="d-none d-sm-table-cell">18 h</td><td><span class="badge text-bg-secondary">En biblioteca</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Neon Drift"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+                <tr><th scope="row" class="text-body-secondary">04</th><td><i class="bi bi-stars text-warning me-2"></i><span class="fw-semibold">Starlight Valley</span></td><td class="d-none d-md-table-cell text-body-secondary">Indie · Simulación</td><td class="d-none d-sm-table-cell">102 h</td><td><span class="badge text-bg-success">Completado</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Starlight Valley"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+                <tr><th scope="row" class="text-body-secondary">05</th><td><i class="bi bi-crosshair text-danger me-2"></i><span class="fw-semibold">Frontline: Zero</span></td><td class="d-none d-md-table-cell text-body-secondary">Estrategia</td><td class="d-none d-sm-table-cell">0 h</td><td><span class="badge text-bg-secondary">Sin instalar</span></td><td class="text-end"><button class="btn btn-sm btn-outline-primary" aria-label="Abrir Frontline: Zero"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Fin de la tabla -->
+          <p id="resultadoBusqueda" class="text-body-secondary small mt-2 mb-0">Mostrando 5 de 12 juegos</p>
+        </section>
+        <!-- Fin de tabla de biblioteca -->
 
-      <!-- Estadísticas -->
-      <section id="estadisticas" class="mb-4">
-        <h2 class="h4 mb-3">Resumen de actividad</h2>
-        <div class="row g-3">
-          <div class="col-12 col-md-4"><div class="stat-card rounded-3 border border-secondary-subtle p-4 h-100"><div class="d-flex justify-content-between"><span class="text-body-secondary">Tiempo total</span><i class="bi bi-hourglass-split text-warning"></i></div><p class="h3 mt-2 mb-0">248 <span class="fs-6 fw-normal text-body-secondary">horas</span></p></div></div>
-          <div class="col-12 col-md-4"><div class="stat-card rounded-3 border border-secondary-subtle p-4 h-100"><div class="d-flex justify-content-between"><span class="text-body-secondary">Juegos completados</span><i class="bi bi-trophy text-warning"></i></div><p class="h3 mt-2 mb-0">4 <span class="fs-6 fw-normal text-body-secondary">de 12</span></p></div></div>
-          <div class="col-12 col-md-4"><div class="stat-card rounded-3 border border-secondary-subtle p-4 h-100"><div class="d-flex justify-content-between"><span class="text-body-secondary">Racha actual</span><i class="bi bi-fire text-danger"></i></div><p class="h3 mt-2 mb-0">7 <span class="fs-6 fw-normal text-body-secondary">días</span></p></div></div>
-        </div>
-      </section>
-      <!-- Fin de estadísticas -->
+        <!-- Estadísticas -->
+        <section id="estadisticas" class="mb-4">
+          <h2 class="h4 mb-3">Resumen de actividad</h2>
+          <div class="row g-3">
+            <div class="col-12 col-md-4"><div class="stat-card rounded-3 border border-secondary-subtle p-4 h-100"><div class="d-flex justify-content-between"><span class="text-body-secondary">Tiempo total</span><i class="bi bi-hourglass-split text-warning"></i></div><p class="h3 mt-2 mb-0">248 <span class="fs-6 fw-normal text-body-secondary">horas</span></p></div></div>
+            <div class="col-12 col-md-4"><div class="stat-card rounded-3 border border-secondary-subtle p-4 h-100"><div class="d-flex justify-content-between"><span class="text-body-secondary">Juegos completados</span><i class="bi bi-trophy text-warning"></i></div><p class="h3 mt-2 mb-0">4 <span class="fs-6 fw-normal text-body-secondary">de 12</span></p></div></div>
+            <div class="col-12 col-md-4"><div class="stat-card rounded-3 border border-secondary-subtle p-4 h-100"><div class="d-flex justify-content-between"><span class="text-body-secondary">Racha actual</span><i class="bi bi-fire text-danger"></i></div><p class="h3 mt-2 mb-0">7 <span class="fs-6 fw-normal text-body-secondary">días</span></p></div></div>
+          </div>
+        </section>
+        <!-- Fin de estadísticas -->
+      </div>
+      <!-- Fin del contenedor principal -->
     </main>
 
     <!-- Pie de página -->
@@ -150,7 +151,23 @@
     </footer>
     <!-- Fin del pie de página -->
 
-    <!-- Bootstrap 5.3.8 JavaScript bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Bootstrap 5.3.9 JavaScript bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+    <script>
+      // Búsqueda sencilla de juegos dentro de la tabla.
+      const buscador = document.querySelector('#buscadorJuegos');
+      const filas = [...document.querySelectorAll('#filasJuegos tr')];
+      const resultado = document.querySelector('#resultadoBusqueda');
+      buscador.addEventListener('input', () => {
+        const consulta = buscador.value.trim().toLocaleLowerCase('es');
+        let visibles = 0;
+        filas.forEach((fila) => {
+          const coincide = fila.textContent.toLocaleLowerCase('es').includes(consulta);
+          fila.hidden = !coincide;
+          if (coincide) visibles++;
+        });
+        resultado.textContent = consulta ? `Se encontraron ${visibles} juegos` : 'Mostrando 5 de 12 juegos';
+      });
+    </script>
   </body>
 </html>
